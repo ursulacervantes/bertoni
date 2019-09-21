@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import uuid from 'uuid/v1';
+
+import { createTask, updateTask } from '../../actions/index';
 
 import TodoInput from './../TodoInput';
 import TodoList from './../TodoList';
 
 const ComponentList = props => {
-  const [tasks, setTasks] = useState([]);
+  const tasks = useSelector(state => state.tasks);
+  const dispatch = useDispatch();
 
   const addTask = task => {
-    setTasks(state => {
-      return [...state, { done: false, task, id: uuid() }];
-    });
+    dispatch(createTask({ done: false, task, id: uuid() }));
   };
 
   const checkTask = task => {
-    setTasks(state => {
-      return state.map(val => {
-        if (val.id === task.id) val.done = !task.done;
-        return val;
-      });
-    });
+    dispatch(updateTask(task.id));
   };
 
   return (
