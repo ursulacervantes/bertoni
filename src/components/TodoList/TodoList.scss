@@ -1,0 +1,11 @@
+@import 'bootstrap';
+
+.pending {
+}
+
+.done {
+  label {
+    color: gray;
+    text-decoration: line-through;
+  }
+}

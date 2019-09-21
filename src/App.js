@@ -3,6 +3,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Todo from './components/Todo';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
           <Col xs lg="8">
-            Initial commit
+            <Todo />
           </Col>
         </Row>
       </Container>
