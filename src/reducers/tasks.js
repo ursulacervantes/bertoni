@@ -7,10 +7,8 @@ import {
   FETCH_TASKS_FAILURE
 } from '../actions/index';
 
-import { tasks } from '../mock/tasks';
-
 const initialState = {
-  data: tasks,
+  data: [],
   loading: false,
   error: null
 };
@@ -49,7 +47,7 @@ export default function components(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        data: action.payload.tasks
+        data: action.payload.response.tasks
       };
     case FETCH_TASKS_FAILURE:
       return {

@@ -29,7 +29,7 @@ export const fetchTasksBegin = () => ({
 
 export const fetchTasksSuccess = tasks => ({
   type: FETCH_TASKS_SUCCESS,
-  payload: { tasks }
+  payload: tasks
 });
 
 export const fetchTasksFailure = error => ({
@@ -37,7 +37,7 @@ export const fetchTasksFailure = error => ({
   payload: { error }
 });
 
-const tasksUri = '';
+const tasksUri = 'http://localhost:3001/api/tasks';
 export function fetchTasks() {
   return dispatch => {
     dispatch(fetchTasksBegin());

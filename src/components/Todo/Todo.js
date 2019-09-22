@@ -18,9 +18,9 @@ const ComponentList = props => {
     dispatch(updateTask(task.id));
   };
 
-  // useEffect(() => {
-  //   dispatch(fetchTasks());
-  // });
+  useEffect(() => {
+    dispatch(fetchTasks());
+  }, []);
 
   return (
     <div>
